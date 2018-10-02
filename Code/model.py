@@ -29,10 +29,10 @@ def Resnet50_model(train_data, train_label, valid_data, valid_label, test_data, 
 	add_model = Sequential()
 	add_model.add(Flatten(input_shape=base_model.output_shape[1:]))
 	add_model.add(Dense(128,activation='tanh'))
-	add_model.add(BatchNormalization())
+	#add_model.add(BatchNormalization())
 	#add_model.add(Dense(8,activation='tanh'))
 	#add_model.add(Dropout(0.5))
-	add_model.add(Dropout(0.1))
+	add_model.add(Dropout(0.3))
 	add_model.add(Dense(1,activation='sigmoid'))
 	
 
