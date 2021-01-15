@@ -41,7 +41,7 @@ def Resnet50_model(round, train_data, train_label, valid_data, valid_label, test
 	model.compile(loss = 'binary_crossentropy', optimizer= sgd ,metrics = ['accuracy'])
 	#model.summary()
 	nb_epochs = 60
-	hist = model.fit(train_data,train_label,batch_size=4,epochs = nb_epochs,shuffle=True,verbose=1,validation_data=(valid_data, valid_label),
+	hist = model.fit(train_data,train_label,batch_size=16,epochs = nb_epochs,shuffle=True,verbose=1,validation_data=(valid_data, valid_label),
                  	callbacks=[ModelCheckpoint('weight&outcome/ResNet-transferlearning2-mesoderm.model', monitor='val_acc', save_best_only=True)])
 
 
